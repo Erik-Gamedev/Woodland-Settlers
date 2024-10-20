@@ -1,5 +1,3 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
 #include "CameraPawn.h"
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
@@ -7,15 +5,12 @@
 
 
 
-// Sets default values
 ACameraPawn::ACameraPawn()
 {
- 	// Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
 }
 
-// Called when the game starts or when spawned
 void ACameraPawn::BeginPlay()
 {
 	Super::BeginPlay();
@@ -49,24 +44,19 @@ void ACameraPawn::MoveCameraIn2D(const FInputActionValue& Value)
 		AddMovementInput(RightDirection, MovementVector.X);
 }
 
-// Called every frame
 void ACameraPawn::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
 }
 
-// Called to bind functionality to input
 void ACameraPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
 		if (UEnhancedInputComponent* EnhancedInputComponent = CastChecked<UEnhancedInputComponent>(PlayerInputComponent))
 	{
-	/*	EnhancedInputComponent->BindAction(MoveCameraAction, ETriggerEvent::Started, this, &ACameraPawn::MoveCameraIn2D);
-		EnhancedInputComponent->BindAction(MoveCameraAction, ETriggerEvent::Completed, this, &ACameraPawn::MoveCameraIn2D);*/
-		EnhancedInputComponent->BindAction(MoveCameraAction, ETriggerEvent::Triggered, this, &ACameraPawn::MoveCameraIn2D);
-
+		//EnhancedInputComponent->BindAction(MoveCameraAction, ETriggerEvent::Triggered, this, &ACameraPawn::MoveCameraIn2D);
 	}
 
 }

@@ -32,10 +32,11 @@ protected:
 	//EnhancedInput
 
 	UPROPERTY(EditAnywhere, Category = "Input")
-	UInputAction* MoveCameraAction;
+	UInputMappingContext* CameraContext;
 
 	UPROPERTY(EditAnywhere, Category = "Input")
-	UInputMappingContext* CameraContext;
+	UInputAction* MoveCameraAction;
+
 public:	
 	
 };
